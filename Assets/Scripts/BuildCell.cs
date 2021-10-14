@@ -52,7 +52,7 @@ public class BuildCell : MonoBehaviour
         if (!_isBussy)
         {
             _isBussy = true;
-            _building = Instantiate(building, new Vector3(_cords.x, 0, _cords.y), Quaternion.identity, transform);
+            _building = Instantiate(building, new Vector3(_cords.x, 0.5f, _cords.y), Quaternion.identity, transform);
         }
     }
     #endregion
@@ -61,7 +61,7 @@ public class BuildCell : MonoBehaviour
     {
         BuildingPanel = GameObject.FindGameObjectWithTag("BuildingPanel");
     }
-    private void OnMouseUp()
+    private void OnMouseUpAsButton()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
