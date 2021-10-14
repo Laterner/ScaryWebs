@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89fa98e26bf5d16438c81fb94ec1c3f0, type: 2}
+  - {fileID: 2100000, guid: 0d02b55bfed321f418f75c0e0155a18d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,5 +108,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isBussy: 0
   _cords: {x: 0, y: 0}
-  _cell: {fileID: 0}
   _building: {fileID: 0}
+  BuildingPanel: {fileID: 0}

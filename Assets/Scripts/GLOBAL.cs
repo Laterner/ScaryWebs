@@ -19,5 +19,6 @@ public static class GLOBAL
         decor,
         tower
     }
-    public static BuildCell buildCell;
+    public static GameObject buildCell;
+
 }

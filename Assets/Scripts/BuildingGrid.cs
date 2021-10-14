@@ -26,25 +26,25 @@ public class BuildingGrid : MonoBehaviour
     [SerializeField] private Material[] textures;
 
 
-    private void OnDrawGizmosSelected()
-    {
-        for(int x = 0; x < buildingGridSize.x; x++)
-        {
-            for (int y = 0; y < buildingGridSize.y; y++)
-            {
-                if (buildingGrid[x, y] == (int)Builds.air)
-                {
-                    if ((x + y) % 2 == 0) Gizmos.color = new Color(0, 1, 0, 0.8f);
-                    else Gizmos.color = new Color(0f, 0.8f, 0f, 0.8f);
-                }
-                else
-                {
-                    Gizmos.color = new Color(1f, 0, 0, 0.8f);
-                }
-                Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
-            }
-        }
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    for(int x = 0; x < buildingGridSize.x; x++)
+    //    {
+    //        for (int y = 0; y < buildingGridSize.y; y++)
+    //        {
+    //            if (buildingGrid[x, y] == (int)Builds.air)
+    //            {
+    //                if ((x + y) % 2 == 0) Gizmos.color = new Color(0, 1, 0, 0.8f);
+    //                else Gizmos.color = new Color(0f, 0.8f, 0f, 0.8f);
+    //            }
+    //            else
+    //            {
+    //                Gizmos.color = new Color(1f, 0, 0, 0.8f);
+    //            }
+    //            Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 0.1f, 1));
+    //        }
+    //    }
+    //}
 
     private void Awake()
     {

@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using static GLOBAL;
 
 public class BuildCell : MonoBehaviour
 {
     public bool _isBussy;
     public Vector2Int _cords;
     public GameObject _building = null;
+
+    [SerializeField]
+    private GameObject BuildingPanel;
 
     #region Вариации создания объекта клетки
     public void CreateCell(bool isBussy, int x, int y)
@@ -33,6 +38,7 @@ public class BuildCell : MonoBehaviour
     }
     #endregion
 
+    #region Настройки клетки
     public void SetName(string name)
     {
         gameObject.name = name;
@@ -47,6 +53,28 @@ public class BuildCell : MonoBehaviour
         {
             _isBussy = true;
             _building = Instantiate(building, new Vector3(_cords.x, 0, _cords.y), Quaternion.identity, transform);
+        }
+    }
+    #endregion
+
+    private void Awake()
+    {
+        BuildingPanel = GameObject.FindGameObjectWithTag("BuildingPanel");
+    }
+    private void OnMouseUp()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (!BuildingPanel.activeSelf && !_isBussy)
+            {
+                BuildingPanel.SetActive(true);
+                buildCell = gameObject;
+            }
+            else
+            {
+                BuildingPanel.SetActive(false);
+                buildCell = null;
+            }
         }
     }
 }
